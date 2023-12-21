@@ -1,0 +1,23 @@
+
+
+.banner {
+  background: url(./banner.jpg);
+  background-position: fixed;
+  background-size: cover;
+  height: 110vh;
+  border-bottom-left-radius: 15rem;
+}
+
+.row {
+  width: 23rem;
+}
+
+.letyour {
+  width: 14ch;
+  color: #292f36;
+  font-family: DM Serif Display;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 125%; /* 106.25px */
+}
+
