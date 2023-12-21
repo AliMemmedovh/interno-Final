@@ -1,16 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
+import "./style.css";
+import { FiAlignJustify } from "react-icons/fi";
 
 const Header = () => {
   return (
     <>
       <div className="container">
-        <nav className="flex items-center justify-between py-7">
+        <nav className="flex items-center justify-between py-6">
           <div className="logo">
             <img src="/interno.png" alt="" />
           </div>
-          <div className="links hidden xl:flex gap-10 items-center  ">
+          <div className="links hidden gap-10 items-center  ">
             <NavLink to="/" className="links">
               Home
             </NavLink>
@@ -32,6 +34,9 @@ const Header = () => {
             <NavLink to="/Search" className="links">
               <CiSearch />
             </NavLink>
+          </div>
+          <div className=" menu block">
+            <FiAlignJustify />
           </div>
         </nav>
       </div>

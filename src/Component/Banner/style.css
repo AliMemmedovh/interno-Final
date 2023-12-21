@@ -5,19 +5,19 @@
   background-position: fixed;
   background-size: cover;
   height: 110vh;
-  border-bottom-left-radius: 15rem;
+  border-bottom-left-radius: 12rem;
 }
 
 .row {
-  width: 23rem;
+  width: 22rem;
 }
 
 .letyour {
   width: 14ch;
   color: #292f36;
   font-family: DM Serif Display;
-  font-size: 3rem;
+  font-size: 2.9rem;
   font-weight: 700;
-  line-height: 125%; /* 106.25px */
+  line-height: 125%; 
 }
 
