@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
-import "./style.css";
 import { FiAlignJustify } from "react-icons/fi";
+import "./style.css";
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <>
       <div className="container">
@@ -12,30 +14,31 @@ const Header = () => {
           <div className="logo">
             <img src="/interno.png" alt="" />
           </div>
-          <div className="links hidden gap-10 items-center  ">
-            <NavLink to="/" className="links">
+          <div className={`links ${showMenu ? "hidden" : "teldesign"} gap-10 items-center `}>
+            <NavLink to="/" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
               Home
             </NavLink>
-            <NavLink to="/Pages" className="links">
+            <NavLink to="/Pages" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
               Pages
             </NavLink>
-            <NavLink to="/Services" className="links">
+            <NavLink to="/Services" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
               Services
             </NavLink>
-            <NavLink to="/Project" className="links">
+            <NavLink to="/Project" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
               Project
             </NavLink>
-            <NavLink to="/Blog" className="links">
+            <NavLink to="/Blog" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
               Blog
             </NavLink>
-            <NavLink to="/Contact" className="links">
+            <NavLink to="/Contact" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
               Contact
             </NavLink>
-            <NavLink to="/Search" className="links">
+            <NavLink to="/Search" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
               <CiSearch />
             </NavLink>
           </div>
-          <div className=" menu block">
+          <div className={`menu block ${showMenu === "flex" && ""}`}  onClick={() => setShowMenu(!showMenu)}
+          >
             <FiAlignJustify />
           </div>
         </nav>
