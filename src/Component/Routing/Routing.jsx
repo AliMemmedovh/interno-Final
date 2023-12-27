@@ -7,16 +7,27 @@ import Contact from "../../Pages/Contact/Contact";
 import HomePage from "../../Pages/HomePage/HomePage";
 import Search from "../../Pages/Search/Search";
 
+ export const routes = [
+  { path: "/", name: "Home", element: <HomePage /> },
+  { path: "/Pages", name: "Pages", element: <Pages /> },
+  { path: "/Services", name: "Services", element: <Services /> },
+  { path: "/Project", name: "Project", element: <Project /> },
+  { path: "/Blog", name: "Blog", element: <Blog /> },
+  { path: "/Contact", name: "Contact", element: <Contact /> },
+  { path: "/Search", name: "Search", element: <Search /> },
+];
+
+
 const Routing = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/Pages" element={<Pages />} />
-      <Route path="/Services" element={<Services />} />
-      <Route path="/Project" element={<Project />} />
-      <Route path="/Blog" element={<Blog />} />
-      <Route path="/Contact" element={<Contact />} />
-      <Route path="/Search" element={<Search />} />
+      {routes.map(route => (
+        <Route
+          key={route.path}
+          path={route.path}
+          element={route.element}
+        />
+      ))}
     </Routes>
   );
 };

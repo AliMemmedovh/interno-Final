@@ -7,6 +7,8 @@ import "./style.css";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+  
+
   return (
     <>
       <div className="container">
@@ -15,29 +17,21 @@ const Header = () => {
             <img src="/interno.png" alt="" />
           </div>
           <div className={`links ${showMenu ? "hidden" : "teldesign"} gap-10 items-center `}>
-            <NavLink to="/" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
+            <NavLink to="/" className={`links`} onClick={() => setShowMenu(!showMenu)}>
               Home
             </NavLink>
-            <NavLink to="/Pages" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
-              Pages
-            </NavLink>
-            <NavLink to="/Services" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
-              Services
-            </NavLink>
-            <NavLink to="/Project" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
-              Project
-            </NavLink>
-            <NavLink to="/Blog" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
-              Blog
-            </NavLink>
-            <NavLink to="/Contact" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
-              Contact
-            </NavLink>
-            <NavLink to="/Search" className={`links`} onClick={()=> setShowMenu(!showMenu)}>
-              <CiSearch />
-            </NavLink>
+            {routes.map((route,index) => (
+              <NavLink
+                key={index}
+                to={route.path}
+                className={`links`}
+                onClick={() => setShowMenu(!showMenu)}
+              >
+                {route.name}
+              </NavLink>
+            ))}
           </div>
-          <div className={`menu block ${showMenu === "flex" && ""}`}  onClick={() => setShowMenu(!showMenu)}
+          <div className={`menu block ${showMenu === "flex" && ""}`} onClick={() => setShowMenu(!showMenu)}
           >
             <FiAlignJustify />
           </div>
